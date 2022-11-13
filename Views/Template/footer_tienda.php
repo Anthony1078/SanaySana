@@ -83,11 +83,26 @@
 		</div>
 	</footer>
 	<!-- Back to top -->
-	<div class="btn-back-to-top" id="myBtn">
+	<!-- <div class="btn-back-to-top" id="myBtn">
 		<span class="symbol-btn-back-to-top">
 			<i class="zmdi zmdi-chevron-up"></i>
 		</span>
-	</div>
+	</div> -->
+
+	<script>
+		window.watsonAssistantChatOptions = {
+			integrationID: "4b8857a8-2a7c-49a4-956c-0c0590083af9", // The ID of this integration.
+			region: "us-south", // The region your integration is hosted in.
+			serviceInstanceID: "905c3333-c7c5-4f75-bb25-4dc928ac3dff", // The ID of your service instance.
+			onLoad: function(instance) { instance.render(); }
+		};
+		setTimeout(function(){
+			const t=document.createElement('script');
+			t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+			document.head.appendChild(t);
+		});
+	</script>
+
 	<script>
 	    const base_url = "<?= base_url(); ?>";
 		const smony = "<?= SMONEY; ?>";
