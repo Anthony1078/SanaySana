@@ -229,7 +229,7 @@
 					$intTipoId = RCLIENTES; 
 					$request_user = "";
 					
-					$strPassword =  passGenerator();
+					$strPassword = "sanaysana" ;
 					$strPasswordEncript = hash("SHA256",$strPassword);
 					$request_user = $this->insertCliente($strNombre, 
 														$strApellido, 
@@ -303,7 +303,7 @@
 													'email' => $_SESSION['userData']['email_user'], 
 													'emailCopia' => EMAIL_PEDIDOS,
 													'pedido' => $infoOrden );
-							sendEmail($dataEmailOrden,"email_notificacion_orden");
+							//sendEmail($dataEmailOrden,"email_notificacion_orden");
 
 							$orden = openssl_encrypt($request_pedido, METHODENCRIPT, KEY);
 							$transaccion = openssl_encrypt($idtransaccionpaypal, METHODENCRIPT, KEY);
